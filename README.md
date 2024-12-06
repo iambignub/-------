@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/8521b231-179b-4fcd-a021-cb8c0b451f1e)# Nanning-house-price-analysis
+# Nanning-house-price-analysis
 python爬虫，spark分析，flask网页，echarts
 
 一、实验原理或实验内容
@@ -144,9 +144,13 @@ li.xpath('./div/div[2]/div/a[2]/text()')[0]
     data.to_excel('房屋信息.xlsx', index=False)
  if __name__ == '__main__':
     run()
-
 ```
+![image](https://github.com/user-attachments/assets/8f29666e-d774-492d-8b79-28a7de47603d)
+![image](https://github.com/user-attachments/assets/10b8c729-0c50-42ac-83f8-76eb019877c7)
 - 配置spark环境
+![image](https://github.com/user-attachments/assets/bc98040e-7b5d-4a4f-8f73-cd96b158a896)
+![2872cf9464aea7c155c25989c422de9f](https://github.com/user-attachments/assets/98a544d9-6cb4-4286-a986-3b6eb29032fc)
+
 编写python程序，下载需要的包
 `pip install pyspark pymongo`
 编写python程序
@@ -178,7 +182,10 @@ assembly.jar" --packages org.mongodb.spark:mongo-spark-connector_2.12:3.0.1
 C:\Users\zk305\PycharmProjects\pythonProject3\py_spark.py
 ```
 执行spark分析数据
+![image](https://github.com/user-attachments/assets/ee99b662-8154-4b05-8406-c0388a66a1d7)
+
 输出结果成功
+![image](https://github.com/user-attachments/assets/7a6da7cc-7f90-4098-b986-8787c2e77ebd)
 
 创建flask web对数据进行可视化
 连接到MongoDB实现接口

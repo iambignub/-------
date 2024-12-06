@@ -12,6 +12,7 @@ Windows 11，MongoDB，flask，spark，pycharm
 三、实验步骤与结果
 1. 数据采集: 实现爬虫程序，采集链家网站的南宁二手房数据，由于没有县的数
 据，所以这里只爬取几个区的，保存到MongoDB数据库中。
+```python
 import requests
  import threading
  import pandas as pd
@@ -144,11 +145,12 @@ li.xpath('./div/div[2]/div/a[2]/text()')[0]
     data.to_excel('房屋信息.xlsx', index=False)
  if __name__ == '__main__':
     run()
-配置spark环境
-5
+```
+- 配置spark环境
 编写python程序，下载需要的包
-pip install pyspark pymongo
+`pip install pyspark pymongo`
 编写python程序
+```python
 from pyspark.sql import SparkSession
  from pyspark.sql.functions import col
  # 创建 SparkSession 并配置 MongoDB 连接器
@@ -196,9 +198,9 @@ from flask import Flask, jsonify, render_template
  return jsonify(data)
  if __name__ == '__main__':
  app.run(debug=True)
- 8
-9
+```
 前端：
+```html
 <!DOCTYPE html>
  <html lang="zh">
  <head>
@@ -284,4 +286,5 @@ src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
     </script>
  </body>
  </html>
-调用了echarts，由于数值单位相差较大，所以不能同时显示
+```
+- 调用了echarts，由于数值单位相差较大，所以不能同时显示

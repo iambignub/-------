@@ -7,6 +7,7 @@ python爬虫，spark分析，flask网页，echarts
 Spark 计算框架读取MongoDB中存储的二手房交易数据，并进行离线分析，最后将分
 析结果存储到MongoDB数据库中。为了可以更加直观的查看分析结果，我们通过
 Web 系统获取MongoDB数据库中存储的分析结果，实现数据的可视化。
+
 二、实验器材及实验条件
 Windows 11，MongoDB，flask，spark，pycharm
 三、实验步骤与结果

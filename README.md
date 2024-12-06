@@ -1,4 +1,4 @@
-# Nanning-house-price-analysis
+![image](https://github.com/user-attachments/assets/8521b231-179b-4fcd-a021-cb8c0b451f1e)# Nanning-house-price-analysis
 python爬虫，spark分析，flask网页，echarts
 
 一、实验原理或实验内容
@@ -63,7 +63,6 @@ sensorsdata2015jssdkcross=%7B%22distinct_id%22%3A%2217a3c5c23964c1
 17a3c5c23978b3%22%2C%22props%22%3A%7B%22%24latest_traffic_source_type%22%3A%2
  2%E8%87%AA%E7%84%B6%E6%90%9C%E7%B4%A2%E6%B5%81%E9%87%8F%22%2C%22%24latest_r
  eferrer%22%3A%22https%3A%2F%2Fwww.baidu.com%2Flink%22%2C%22%24latest_referr
-3
  er_host%22%3A%22www.baidu.com%22%2C%22%24latest_search_keyword%22%3A%22%E6%
  9C%AA%E5%8F%96%E5%88%B0%E5%80%BC%22%2C%22%24latest_utm_source%22%3A%22baidu%2
  2%2C%22%24latest_utm_medium%22%3A%22pinzhuan%22%2C%22%24latest_utm_campaign%2
@@ -145,6 +144,7 @@ li.xpath('./div/div[2]/div/a[2]/text()')[0]
     data.to_excel('房屋信息.xlsx', index=False)
  if __name__ == '__main__':
     run()
+
 ```
 - 配置spark环境
 编写python程序，下载需要的包
@@ -168,20 +168,21 @@ df = spark.read.format("mongo").load()
  # 将总价列转换为数值类型
 df = df.withColumn("总价", col("总价").cast("double"))
  # 数据分析示例：按区统计平均房价
-result_df = df.groupBy("区").avg("总价").withColumnRenamed("avg(总价)", "平均
-6
-总价")
+result_df = df.groupBy("区").avg("总价").withColumnRenamed("avg(总价)", "平均总价")
  # 将分析结果写入 MongoDB
  result_df.write.format("mongo").mode("overwrite").save()
  print("数据分析完成并存储到MongoDB")
-运行spark-submit --jars "D:\spark-jars\mongo-spark-connector_2.12-3.0.1
+cmd运行```
+spark-submit --jars "D:\spark-jars\mongo-spark-connector_2.12-3.0.1
 assembly.jar" --packages org.mongodb.spark:mongo-spark-connector_2.12:3.0.1 
 C:\Users\zk305\PycharmProjects\pythonProject3\py_spark.py
+```
 执行spark分析数据
 输出结果成功
-7
+
 创建flask web对数据进行可视化
 连接到MongoDB实现接口
+```python
 from flask import Flask, jsonify, render_template
  from pymongo import MongoClient
  app = Flask(__name__)

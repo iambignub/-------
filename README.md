@@ -1,4 +1,4 @@
-# Nanning-house-price-analysis
+# 南宁房价分析小项目
 python爬虫，spark分析，flask网页，echarts
 
 一、实验原理或实验内容
@@ -10,6 +10,7 @@ Web 系统获取MongoDB数据库中存储的分析结果，实现数据的可视
 
 二、实验器材及实验条件
 Windows 11，MongoDB，flask，spark，pycharm
+
 三、实验步骤与结果
 1. 数据采集: 实现爬虫程序，采集链家网站的南宁二手房数据，由于没有县的数
 据，所以这里只爬取几个区的，保存到MongoDB数据库中。

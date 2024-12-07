@@ -181,7 +181,7 @@ result_df = df.groupBy("区").avg("总价").withColumnRenamed("avg(总价)", "�
 cmd运行```
 spark-submit --jars "D:\spark-jars\mongo-spark-connector_2.12-3.0.1
 assembly.jar" --packages org.mongodb.spark:mongo-spark-connector_2.12:3.0.1 
-C:\Users\zk305\PycharmProjects\pythonProject3\py_spark.py
+C:\Users\username\PycharmProjects\pythonProject3\py_spark.py
 ```
 执行spark分析数据
 ![image](https://github.com/user-attachments/assets/ee99b662-8154-4b05-8406-c0388a66a1d7)

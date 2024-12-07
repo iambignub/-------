@@ -298,3 +298,5 @@ src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
  </html>
 ```
 - 调用了echarts，由于数值单位相差较大，所以不能同时显示
+- ![image](https://github.com/user-attachments/assets/259d70d9-d226-40fc-9af1-d095beef4221)
+

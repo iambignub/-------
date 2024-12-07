@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>房产数据分析</title>
+    <script src="https://cdn.jsdelivr.net/npm/echarts/dist/echarts.min.js"></script>
+</head>
+<body>
+    <h1>房产数据分析</h1>
+    <div id="main" style="width: 800px;height:400px;"></div>
+    <script>
+        fetch('/api/data')
+            .then(response => response.json())
+            .then(data => {
+                const labels = data.map(item => item.区);
+                const avgPrices = data.map(item => item.平均总价);
+                const avgAreas = data.map(item => item.平均面积);
+                const counts = data.map(item => item.房子数量);
+
+                var myChart = echarts.init(document.getElementById('main'));
+
+                var option = {
+                    title: {
+                        text: '房产数据分析',
+                        left: 'center'
+                    },
+                    tooltip: {
+                        trigger: 'axis'
+                    },
+                    legend: {
+                        data: ['平均总价', '平均面积', '房子数量'],
+                        top: '10%'
+                    },
+                    xAxis: {
+                        type: 'category',
+                        data: labels
+                    },
+                    yAxis: [
+                        {
+                            type: 'value',
+                            name: '价格和面积',
+                            position: 'left'
+                        },
+                        {
+                            type: 'value',
+                            name: '房子数量',
+                            position: 'right'
+                        }
+                    ],
+                    series: [
+                        {
+                            name: '平均总价',
+                            type: 'bar',
+                            data: avgPrices,
+                            yAxisIndex: 0,
+                            itemStyle: {
+                                color: 'rgba(255, 99, 132, 0.6)'
+                            }
+                        },
+                        {
+                            name: '平均面积',
+                            type: 'bar',
+                            data: avgAreas,
+                            yAxisIndex: 0,
+                            itemStyle: {
+                                color: 'rgba(54, 162, 235, 0.6)'
+                            }
+                        },
+                        {
+                            name: '房子数量',
+                            type: 'bar',
+                            data: counts,
+                            yAxisIndex: 1,
+                            itemStyle: {
+                                color: 'rgba(75, 192, 192, 0.6)'
+                            }
+                        }
+                    ]
+                };
+
+                myChart.setOption(option);
+            });
+    </script>
+</body>
+</html>
